@@ -1,0 +1,209 @@
+|Top
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+KEY[0] => SecCount:stage0.clock
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => ~NO_FANOUT~
+HEX0[0] << SegDecoder:stage2.Y[0]
+HEX0[1] << SegDecoder:stage2.Y[1]
+HEX0[2] << SegDecoder:stage2.Y[2]
+HEX0[3] << SegDecoder:stage2.Y[3]
+HEX0[4] << SegDecoder:stage2.Y[4]
+HEX0[5] << SegDecoder:stage2.Y[5]
+HEX0[6] << SegDecoder:stage2.Y[6]
+HEX1[0] << SegDecoder:stage1.Y[0]
+HEX1[1] << SegDecoder:stage1.Y[1]
+HEX1[2] << SegDecoder:stage1.Y[2]
+HEX1[3] << SegDecoder:stage1.Y[3]
+HEX1[4] << SegDecoder:stage1.Y[4]
+HEX1[5] << SegDecoder:stage1.Y[5]
+HEX1[6] << SegDecoder:stage1.Y[6]
+HEX2[0] << HEX2[0].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[1] << HEX2[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[2] << HEX2[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[3] << HEX2[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[4] << HEX2[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[5] << HEX2[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX2[6] << HEX2[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[0] << comb.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[1] << HEX3[1].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[2] << HEX3[2].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[3] << HEX3[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[4] << HEX3[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[5] << HEX3[5].DB_MAX_OUTPUT_PORT_TYPE
+HEX3[6] << HEX3[6].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0
+clock => Q[0].CLK
+clock => Q[1].CLK
+clock => Q[2].CLK
+clock => Q[3].CLK
+clock => Q[4].CLK
+clock => Q[5].CLK
+Y[0] <= Q[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Q[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Q[2].DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Q[3].DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Q[4].DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Q[5].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Inc6:Incrementer
+X[0] => IncStage0:Stage0.X
+X[1] => IncStageI:Stage1.X
+X[2] => IncStageI:Stage2.X
+X[3] => IncStageI:Stage3.X
+X[4] => IncStageI:Stage4.X
+X[5] => IncStageI:Stage5.X
+Y[0] <= IncStage0:Stage0.S
+Y[1] <= IncStageI:Stage1.S
+Y[2] <= IncStageI:Stage2.S
+Y[3] <= IncStageI:Stage3.S
+Y[4] <= IncStageI:Stage4.S
+Y[5] <= IncStageI:Stage5.S
+
+
+|Top|SecCount:stage0|Inc6:Incrementer|IncStage0:Stage0
+X => Cout.DATAIN
+X => S.DATAIN
+S <= X.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= X.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Inc6:Incrementer|IncStageI:Stage1
+X => S.IN0
+X => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Inc6:Incrementer|IncStageI:Stage2
+X => S.IN0
+X => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Inc6:Incrementer|IncStageI:Stage3
+X => S.IN0
+X => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Inc6:Incrementer|IncStageI:Stage4
+X => S.IN0
+X => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Inc6:Incrementer|IncStageI:Stage5
+X => S.IN0
+X => Cout.IN0
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SecCount:stage0|Over59:LimitTest
+A[0] => X.IN1
+A[1] => C.IN1
+A[2] => C[2].IN1
+A[3] => C[3].IN1
+A[4] => C[4].IN0
+A[5] => C[4].IN1
+X <= X.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SegDecoder:stage1
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|SegDecoder:stage2
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,25 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+Use ieee.numeric_std.all ;
+
+Entity Over59 is
+
+	Port ( A : in unsigned (5 downto 0);
+	X : out std_logic);
+
+End Over59;
+
+ARCHITECTURE LogicFunction OF Over59 IS
+
+	SIGNAL C : unsigned(5 downto 1);
+
+BEGIN
+
+	C(5) <= '1' AND A(5) after 1 ns;
+	C(4) <= C(5) AND ('1' AND A(4)) after 4 ns;
+	C(3) <= C(4) AND ('1' AND A(3)) after 4 ns;
+	C(2) <= C(3) AND A(2) after 4 ns;
+	C(1) <= C(2) OR (C(3) AND ('1' AND A(1))) after 6 ns;
+	X <= C(2) OR (C(1) AND ('1' AND A(0))) after 6 ns;
+	
+END LogicFunction ;

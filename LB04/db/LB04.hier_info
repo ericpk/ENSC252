@@ -1,0 +1,529 @@
+|TestTimesTen
+SW[0] => TimesTen:stage0.X[0]
+SW[1] => TimesTen:stage0.X[1]
+SW[2] => TimesTen:stage0.X[2]
+SW[3] => TimesTen:stage0.X[3]
+SW[4] => TimesTen:stage0.X[4]
+SW[5] => TimesTen:stage0.X[5]
+HEX0[0] <= SegDecoder:stage7.Y[0]
+HEX0[1] <= SegDecoder:stage7.Y[1]
+HEX0[2] <= SegDecoder:stage7.Y[2]
+HEX0[3] <= SegDecoder:stage7.Y[3]
+HEX0[4] <= SegDecoder:stage7.Y[4]
+HEX0[5] <= SegDecoder:stage7.Y[5]
+HEX0[6] <= SegDecoder:stage7.Y[6]
+HEX1[0] <= SegDecoder:stage5.Y[0]
+HEX1[1] <= SegDecoder:stage5.Y[1]
+HEX1[2] <= SegDecoder:stage5.Y[2]
+HEX1[3] <= SegDecoder:stage5.Y[3]
+HEX1[4] <= SegDecoder:stage5.Y[4]
+HEX1[5] <= SegDecoder:stage5.Y[5]
+HEX1[6] <= SegDecoder:stage5.Y[6]
+HEX2[0] <= SegDecoder:stage3.Y[0]
+HEX2[1] <= SegDecoder:stage3.Y[1]
+HEX2[2] <= SegDecoder:stage3.Y[2]
+HEX2[3] <= SegDecoder:stage3.Y[3]
+HEX2[4] <= SegDecoder:stage3.Y[4]
+HEX2[5] <= SegDecoder:stage3.Y[5]
+HEX2[6] <= SegDecoder:stage3.Y[6]
+HEX3[0] <= SegDecoder:stage1.Y[0]
+HEX3[1] <= SegDecoder:stage1.Y[1]
+HEX3[2] <= SegDecoder:stage1.Y[2]
+HEX3[3] <= SegDecoder:stage1.Y[3]
+HEX3[4] <= SegDecoder:stage1.Y[4]
+HEX3[5] <= SegDecoder:stage1.Y[5]
+HEX3[6] <= SegDecoder:stage1.Y[6]
+
+
+|TestTimesTen|TimesTen:stage0
+X[0] => HalfAdder:stage0.B
+X[0] => TenX[1].DATAIN
+X[1] => FullAdder:stage1.B
+X[1] => TenX[2].DATAIN
+X[2] => HalfAdder:stage0.A
+X[2] => FullAdder:stage2.B
+X[3] => FullAdder:stage1.C
+X[3] => FullAdder:stage3.B
+X[4] => FullAdder:stage2.C
+X[4] => HalfAdder:stage4.B
+X[5] => FullAdder:stage3.C
+X[5] => HalfAdder:stage5.B
+TenX[0] <= <GND>
+TenX[1] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+TenX[2] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+TenX[3] <= HalfAdder:stage0.Sum
+TenX[4] <= FullAdder:stage1.Sum
+TenX[5] <= FullAdder:stage2.Sum
+TenX[6] <= FullAdder:stage3.Sum
+TenX[7] <= HalfAdder:stage4.Sum
+TenX[8] <= HalfAdder:stage5.Sum
+TenX[9] <= HalfAdder:stage5.Carry
+
+
+|TestTimesTen|TimesTen:stage0|HalfAdder:stage0
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage0|FullAdder:stage1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage0|FullAdder:stage2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage0|FullAdder:stage3
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage0|HalfAdder:stage4
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage0|HalfAdder:stage5
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|SegDecoder:stage1
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage2
+X[0] => HalfAdder:stage0.B
+X[0] => TenX[1].DATAIN
+X[1] => FullAdder:stage1.B
+X[1] => TenX[2].DATAIN
+X[2] => HalfAdder:stage0.A
+X[2] => FullAdder:stage2.B
+X[3] => FullAdder:stage1.C
+X[3] => FullAdder:stage3.B
+X[4] => FullAdder:stage2.C
+X[4] => HalfAdder:stage4.B
+X[5] => FullAdder:stage3.C
+X[5] => HalfAdder:stage5.B
+TenX[0] <= <GND>
+TenX[1] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+TenX[2] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+TenX[3] <= HalfAdder:stage0.Sum
+TenX[4] <= FullAdder:stage1.Sum
+TenX[5] <= FullAdder:stage2.Sum
+TenX[6] <= FullAdder:stage3.Sum
+TenX[7] <= HalfAdder:stage4.Sum
+TenX[8] <= HalfAdder:stage5.Sum
+TenX[9] <= HalfAdder:stage5.Carry
+
+
+|TestTimesTen|TimesTen:stage2|HalfAdder:stage0
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage2|FullAdder:stage1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage2|FullAdder:stage2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage2|FullAdder:stage3
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage2|HalfAdder:stage4
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage2|HalfAdder:stage5
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|SegDecoder:stage3
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage4
+X[0] => HalfAdder:stage0.B
+X[0] => TenX[1].DATAIN
+X[1] => FullAdder:stage1.B
+X[1] => TenX[2].DATAIN
+X[2] => HalfAdder:stage0.A
+X[2] => FullAdder:stage2.B
+X[3] => FullAdder:stage1.C
+X[3] => FullAdder:stage3.B
+X[4] => FullAdder:stage2.C
+X[4] => HalfAdder:stage4.B
+X[5] => FullAdder:stage3.C
+X[5] => HalfAdder:stage5.B
+TenX[0] <= <GND>
+TenX[1] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+TenX[2] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+TenX[3] <= HalfAdder:stage0.Sum
+TenX[4] <= FullAdder:stage1.Sum
+TenX[5] <= FullAdder:stage2.Sum
+TenX[6] <= FullAdder:stage3.Sum
+TenX[7] <= HalfAdder:stage4.Sum
+TenX[8] <= HalfAdder:stage5.Sum
+TenX[9] <= HalfAdder:stage5.Carry
+
+
+|TestTimesTen|TimesTen:stage4|HalfAdder:stage0
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage4|FullAdder:stage1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage4|FullAdder:stage2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage4|FullAdder:stage3
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage4|HalfAdder:stage4
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage4|HalfAdder:stage5
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|SegDecoder:stage5
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage6
+X[0] => HalfAdder:stage0.B
+X[0] => TenX[1].DATAIN
+X[1] => FullAdder:stage1.B
+X[1] => TenX[2].DATAIN
+X[2] => HalfAdder:stage0.A
+X[2] => FullAdder:stage2.B
+X[3] => FullAdder:stage1.C
+X[3] => FullAdder:stage3.B
+X[4] => FullAdder:stage2.C
+X[4] => HalfAdder:stage4.B
+X[5] => FullAdder:stage3.C
+X[5] => HalfAdder:stage5.B
+TenX[0] <= <GND>
+TenX[1] <= X[0].DB_MAX_OUTPUT_PORT_TYPE
+TenX[2] <= X[1].DB_MAX_OUTPUT_PORT_TYPE
+TenX[3] <= HalfAdder:stage0.Sum
+TenX[4] <= FullAdder:stage1.Sum
+TenX[5] <= FullAdder:stage2.Sum
+TenX[6] <= FullAdder:stage3.Sum
+TenX[7] <= HalfAdder:stage4.Sum
+TenX[8] <= HalfAdder:stage5.Sum
+TenX[9] <= HalfAdder:stage5.Carry
+
+
+|TestTimesTen|TimesTen:stage6|HalfAdder:stage0
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage6|FullAdder:stage1
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage6|FullAdder:stage2
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage6|FullAdder:stage3
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+C => Sum.IN1
+C => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage6|HalfAdder:stage4
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|TimesTen:stage6|HalfAdder:stage5
+A => Sum.IN0
+A => Carry.IN0
+B => Sum.IN1
+B => Carry.IN1
+Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
+Carry <= Carry.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestTimesTen|SegDecoder:stage7
+D[0] => Mux0.IN19
+D[0] => Mux1.IN19
+D[0] => Mux2.IN19
+D[0] => Mux3.IN19
+D[0] => Mux4.IN19
+D[0] => Mux5.IN19
+D[0] => Mux6.IN19
+D[1] => Mux0.IN18
+D[1] => Mux1.IN18
+D[1] => Mux2.IN18
+D[1] => Mux3.IN18
+D[1] => Mux4.IN18
+D[1] => Mux5.IN18
+D[1] => Mux6.IN18
+D[2] => Mux0.IN17
+D[2] => Mux1.IN17
+D[2] => Mux2.IN17
+D[2] => Mux3.IN17
+D[2] => Mux4.IN17
+D[2] => Mux5.IN17
+D[2] => Mux6.IN17
+D[3] => Mux0.IN16
+D[3] => Mux1.IN16
+D[3] => Mux2.IN16
+D[3] => Mux3.IN16
+D[3] => Mux4.IN16
+D[3] => Mux5.IN16
+D[3] => Mux6.IN16
+Y[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Y[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Y[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Y[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

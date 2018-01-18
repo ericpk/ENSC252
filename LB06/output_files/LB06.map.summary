@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Nov 14 11:40:22 2017
+Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Full Version
+Revision Name : LB06
+Top-level Entity Name : TestReaction
+Family : Cyclone IV E
+Total logic elements : 49
+    Total combinational functions : 49
+    Dedicated logic registers : 28
+Total registers : 28
+Total pins : 21
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

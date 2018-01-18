@@ -1,0 +1,144 @@
+|TestSystem
+SW[0] => system:stage1.Doors[0]
+SW[0] => LEDR[0].DATAIN
+SW[1] => system:stage1.Doors[1]
+SW[1] => LEDR[1].DATAIN
+SW[2] => system:stage1.Doors[2]
+SW[2] => LEDR[2].DATAIN
+SW[3] => system:stage1.Doors[3]
+SW[3] => LEDR[3].DATAIN
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+KEY[2] => ~NO_FANOUT~
+KEY[3] => system:stage1.ARM
+LEDR[0] << SW[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << SW[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << SW[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << SW[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[0] << system:stage1.Ready
+LEDG[1] << system:stage1.SysArmed
+LEDG[2] << system:stage1.AlarmOn
+LEDG[3] << system:stage1.Delay
+CLOCK_50 => PreScale:stage0.clk
+HEX0[0] << Alarm:stage2.Seg0[0]
+HEX0[1] << Alarm:stage2.Seg0[1]
+HEX0[2] << Alarm:stage2.Seg0[2]
+HEX0[3] << Alarm:stage2.Seg0[3]
+HEX0[4] << Alarm:stage2.Seg0[4]
+HEX0[5] << Alarm:stage2.Seg0[5]
+HEX0[6] << Alarm:stage2.Seg0[6]
+HEX1[0] << Alarm:stage2.Seg1[0]
+HEX1[1] << Alarm:stage2.Seg1[1]
+HEX1[2] << Alarm:stage2.Seg1[2]
+HEX1[3] << Alarm:stage2.Seg1[3]
+HEX1[4] << Alarm:stage2.Seg1[4]
+HEX1[5] << Alarm:stage2.Seg1[5]
+HEX1[6] << Alarm:stage2.Seg1[6]
+HEX2[0] << Alarm:stage2.Seg2[0]
+HEX2[1] << Alarm:stage2.Seg2[1]
+HEX2[2] << Alarm:stage2.Seg2[2]
+HEX2[3] << Alarm:stage2.Seg2[3]
+HEX2[4] << Alarm:stage2.Seg2[4]
+HEX2[5] << Alarm:stage2.Seg2[5]
+HEX2[6] << Alarm:stage2.Seg2[6]
+
+
+|TestSystem|PreScale:stage0
+clk => Y[0].CLK
+clk => Y[1].CLK
+clk => Y[2].CLK
+clk => Y[3].CLK
+clk => Y[4].CLK
+clk => Y[5].CLK
+clk => Y[6].CLK
+clk => Y[7].CLK
+clk => Y[8].CLK
+clk => Y[9].CLK
+clk => Y[10].CLK
+clk => Y[11].CLK
+clk => Y[12].CLK
+clk => Y[13].CLK
+clk => Y[14].CLK
+clk => Y[15].CLK
+clk => Y[16].CLK
+clk => Y[17].CLK
+clk => Y[18].CLK
+clkO <= Y[18].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestSystem|System:stage1
+Doors[0] => Ready.IN0
+Doors[1] => Ready.IN1
+Doors[2] => Ready.IN1
+Doors[3] => Ready.IN1
+ARM => ARMtest.DATAIN
+ARM => pulse.IN1
+clock => TenSecDelay:delay0.clock
+clock => deactivate.CLK
+clock => preArm.CLK
+clock => clkDelay[0].CLK
+clock => clkDelay[1].CLK
+clock => ARMtest.CLK
+clock => alarm~1.DATAIN
+Ready <= Ready.DB_MAX_OUTPUT_PORT_TYPE
+SysArmed <= SysArmed.DB_MAX_OUTPUT_PORT_TYPE
+AlarmOn <= AlarmOn.DB_MAX_OUTPUT_PORT_TYPE
+Delay <= dactual.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestSystem|System:stage1|TenSecDelay:delay0
+load => state.DATAB
+clock => state.CLK
+clock => Counter[0].CLK
+clock => Counter[1].CLK
+clock => Counter[2].CLK
+clock => Counter[3].CLK
+clock => Counter[4].CLK
+clock => Counter[5].CLK
+clock => Counter[6].CLK
+clock => Counter[7].CLK
+clock => Counter[8].CLK
+clock => Counter[9].CLK
+clock => TC~reg0.CLK
+TC <= TC~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TestSystem|Alarm:stage2
+Enable => Seg0.OUTPUTSELECT
+Enable => Seg0.OUTPUTSELECT
+Enable => Seg1.OUTPUTSELECT
+Enable => Seg1.OUTPUTSELECT
+Enable => Seg2.OUTPUTSELECT
+Enable => Seg2.OUTPUTSELECT
+Enable => Seg2.OUTPUTSELECT
+Enable => Seg2.OUTPUTSELECT
+Enable => Seg2.OUTPUTSELECT
+clock => scale[0].CLK
+clock => scale[1].CLK
+clock => scale[2].CLK
+clock => scale[3].CLK
+clock => scale[4].CLK
+clock => scale[5].CLK
+Seg0[0] <= <VCC>
+Seg0[1] <= Seg0.DB_MAX_OUTPUT_PORT_TYPE
+Seg0[2] <= Seg0.DB_MAX_OUTPUT_PORT_TYPE
+Seg0[3] <= <VCC>
+Seg0[4] <= <VCC>
+Seg0[5] <= <VCC>
+Seg0[6] <= <VCC>
+Seg1[0] <= <VCC>
+Seg1[1] <= Seg1.DB_MAX_OUTPUT_PORT_TYPE
+Seg1[2] <= Seg1.DB_MAX_OUTPUT_PORT_TYPE
+Seg1[3] <= <VCC>
+Seg1[4] <= <VCC>
+Seg1[5] <= <VCC>
+Seg1[6] <= <VCC>
+Seg2[0] <= Seg2.DB_MAX_OUTPUT_PORT_TYPE
+Seg2[1] <= Seg2.DB_MAX_OUTPUT_PORT_TYPE
+Seg2[2] <= Seg2.DB_MAX_OUTPUT_PORT_TYPE
+Seg2[3] <= <VCC>
+Seg2[4] <= <VCC>
+Seg2[5] <= Seg2.DB_MAX_OUTPUT_PORT_TYPE
+Seg2[6] <= Seg2.DB_MAX_OUTPUT_PORT_TYPE
+
+

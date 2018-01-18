@@ -1,0 +1,17 @@
+LIBRARY ieee ;
+USE ieee.std_logic_1164.all ;
+
+Entity IncStage0 is
+
+	Port ( X : in unsigned;
+	S : out unsigned;
+	Cout : out unsigned);
+
+End IncStage0;
+
+ARCHITECTURE LogicFunction OF IncStage0 IS
+BEGIN
+	S <= NOT X after 1 ns;
+	Cout <= X;
+
+END LogicFunction ;

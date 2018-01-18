@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Nov 29 11:29:29 2017
+Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Full Version
+Revision Name : LB07
+Top-level Entity Name : TestSystem
+Family : Cyclone IV E
+Total logic elements : 708
+    Total combinational functions : 452
+    Dedicated logic registers : 556
+Total registers : 556
+Total pins : 38
+Total virtual pins : 0
+Total memory bits : 327,680
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

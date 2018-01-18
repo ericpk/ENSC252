@@ -1,0 +1,79 @@
+H:/ENSC252_Projects/PLA03/IncStage0.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/IncStage0.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity IncStage0
+-- Compiling architecture LogicFunction of IncStage0
+
+} {} {}} H:/ENSC252_Projects/PLA03/Over59.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/Over59.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Over59
+-- Compiling architecture LogicFunction of Over59
+
+} {} {}} H:/ENSC252_Projects/PLA03/Over60.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/Over60.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Over60
+-- Compiling architecture LogicFunction of Over60
+
+} {} {}} H:/ENSC252_Projects/PLA03/TBInc6.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/TBInc6.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity TBInc6
+-- Compiling architecture rtl of TBInc6
+-- Loading entity Inc6
+
+} {} {}} H:/ENSC252_Projects/PLA03/IncStageI.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/IncStageI.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity IncStageI
+-- Compiling architecture LogicFunction of IncStageI
+
+} {} {}} H:/ENSC252_Projects/PLA03/SecCount.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/SecCount.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity SecCount
+-- Compiling architecture First of SecCount
+-- Loading entity Inc6
+-- Loading entity Over59
+-- Compiling architecture Second of SecCount
+-- Loading entity SecCount
+-- Loading entity Over60
+
+} {} {}} H:/ENSC252_Projects/PLA03/TBOverN.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/TBOverN.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity TBOverN
+-- Compiling architecture rtl of TBOverN
+-- Loading entity Over59
+-- Loading entity Over60
+
+} {} {}} H:/ENSC252_Projects/PLA03/Inc6.vhd {1 {vcom -work work -2002 -explicit -stats=none H:/ENSC252_Projects/PLA03/Inc6.vhd
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Inc6
+-- Compiling architecture LogicFunction of Inc6
+
+} {} {}}

@@ -1,0 +1,8 @@
+
+State Machine - |TestSystem|System:stage1|alarm
+Name alarm.E alarm.D alarm.C alarm.B alarm.A 
+alarm.A 0 0 0 0 0 
+alarm.B 0 0 0 1 1 
+alarm.C 0 0 1 0 1 
+alarm.D 0 1 0 0 1 
+alarm.E 1 0 0 0 1 

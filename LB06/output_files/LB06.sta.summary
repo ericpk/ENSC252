@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -1.873
+TNS   : -21.673
+
+Type  : Slow 1200mV 85C Model Setup 'PreScale:stage0|Y[19]'
+Slack : -1.195
+TNS   : -8.087
+
+Type  : Slow 1200mV 85C Model Hold 'PreScale:stage0|Y[19]'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.407
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -28.700
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'PreScale:stage0|Y[19]'
+Slack : -1.285
+TNS   : -10.280
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -1.556
+TNS   : -17.352
+
+Type  : Slow 1200mV 0C Model Setup 'PreScale:stage0|Y[19]'
+Slack : -0.955
+TNS   : -6.591
+
+Type  : Slow 1200mV 0C Model Hold 'PreScale:stage0|Y[19]'
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.364
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -28.700
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'PreScale:stage0|Y[19]'
+Slack : -1.285
+TNS   : -10.280
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.424
+TNS   : -1.900
+
+Type  : Fast 1200mV 0C Model Setup 'PreScale:stage0|Y[19]'
+Slack : -0.091
+TNS   : -0.255
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'PreScale:stage0|Y[19]'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -29.016
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'PreScale:stage0|Y[19]'
+Slack : -1.000
+TNS   : -8.000
+
+------------------------------------------------------------

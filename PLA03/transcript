@@ -1,0 +1,131 @@
+# Load canceled
+# Compile of Inc6.vhd was successful.
+# Compile of IncStage0.vhd was successful.
+# Compile of IncStageI.vhd was successful.
+# Compile of TBInc6.vhd was successful.
+# Compile of Over59.vhd was successful.
+# Compile of Over60.vhd was successful.
+# Compile of TBOverN.vhd was successful.
+# Compile of SecCount.vhd failed with 2 errors.
+# Compile of TBSecCount.vhd was successful.
+# 9 compiles, 1 failed with 2 errors.
+# Compile of Inc6.vhd was successful.
+# Compile of IncStage0.vhd was successful.
+# Compile of IncStageI.vhd was successful.
+# Compile of TBInc6.vhd was successful.
+# Compile of Over59.vhd was successful.
+# Compile of Over60.vhd was successful.
+# Compile of TBOverN.vhd was successful.
+# Compile of SecCount.vhd was successful.
+# Compile of TBSecCount.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui -t ns work.tbseccount
+# vsim -gui 
+# Start time: 12:39:48 on Oct 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tbseccount(rtl)
+# Loading work.seccount(first)
+# Loading work.inc6(logicfunction)
+# Loading work.incstage0(logicfunction)
+# Loading work.incstagei(logicfunction)
+# Loading work.over59(logicfunction)
+# Loading work.seccount(second)
+# Loading work.over60(logicfunction)
+add wave  \
+sim:/tbseccount/tbClock \
+sim:/tbseccount/tbY1 \
+sim:/tbseccount/tbY2 \
+sim:/tbseccount/PERIOD
+run -all
+run
+run -all
+# Compile of Inc6.vhd was successful.
+# Compile of IncStage0.vhd was successful.
+# Compile of IncStageI.vhd was successful.
+# Compile of TBInc6.vhd was successful.
+# Compile of Over59.vhd was successful.
+# Compile of Over60.vhd was successful.
+# Compile of TBOverN.vhd was successful.
+# Compile of SecCount.vhd was successful.
+# Compile of TBSecCount.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim -gui -t ns work.tbseccount
+# vsim 
+# Start time: 12:48:49 on Oct 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tbseccount(rtl)
+# Loading work.seccount(first)
+# Loading work.inc6(logicfunction)
+# Loading work.incstage0(logicfunction)
+# Loading work.incstagei(logicfunction)
+# Loading work.over59(logicfunction)
+# Loading work.seccount(second)
+# Loading work.over60(logicfunction)
+add wave  \
+sim:/tbseccount/tbClock \
+sim:/tbseccount/tbY1 \
+sim:/tbseccount/tbY2 \
+sim:/tbseccount/PERIOD
+run
+run -all
+# Compile of TBSecCount.vhd was successful.
+vsim -gui -t ns work.tbseccount
+# vsim 
+# Start time: 12:56:25 on Oct 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tbseccount(rtl)
+# Loading work.seccount(first)
+# Loading work.inc6(logicfunction)
+# Loading work.incstage0(logicfunction)
+# Loading work.incstagei(logicfunction)
+# Loading work.over59(logicfunction)
+# Loading work.seccount(second)
+# Loading work.over60(logicfunction)
+add wave  \
+sim:/tbseccount/tbClock \
+sim:/tbseccount/tbY1 \
+sim:/tbseccount/tbY2 \
+sim:/tbseccount/PERIOD
+run
+run -all
+# Compile of TBSecCount.vhd was successful.
+vsim -gui -t ns work.tbseccount
+# vsim 
+# Start time: 12:58:26 on Oct 24,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tbseccount(rtl)
+# Loading work.seccount(first)
+# Loading work.inc6(logicfunction)
+# Loading work.incstage0(logicfunction)
+# Loading work.incstagei(logicfunction)
+# Loading work.over59(logicfunction)
+# Loading work.seccount(second)
+# Loading work.over60(logicfunction)
+add dataflow  \
+sim:/tbseccount/tbClock \
+sim:/tbseccount/tbY1 \
+sim:/tbseccount/tbY2 \
+sim:/tbseccount/PERIOD
+# WARNING: No extended dataflow license exists
+# No drivers or ports for tbClock
+# No drivers or ports for tbY1
+# No drivers or ports for tbY2
+# No drivers or ports for PERIOD
+add wave  \
+sim:/tbseccount/tbClock \
+sim:/tbseccount/tbY1 \
+sim:/tbseccount/tbY2 \
+sim:/tbseccount/PERIOD
+run -all
